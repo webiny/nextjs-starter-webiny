@@ -1,17 +1,6 @@
 # A statically generated blog example using Next.js and Markdown
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using Markdown files as the data source.
-
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
-
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
-
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/blog-starter)
-
+This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Webiny](https://webiny.com/) as the data source.
 ## Demo
 
 [https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
@@ -20,7 +9,7 @@ Preview the example live on [StackBlitz](http://stackblitz.com/):
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/cms-webiny&project-name=cms-webiny&repository-name=cms-webiny&env=WEBINY_PREVIEW_SECRET,NEXT_PUBLIC_WEBINY_API_URL&envDescription=Required%20to%20connect%20the%20app%20with%20Webiny&envLink=https://vercel.link/cms-webiny-env)
 
 ### Related examples
 
@@ -31,6 +20,7 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 - [Prismic](/examples/cms-prismic)
 - [Contentful](/examples/cms-contentful)
 - [Strapi](/examples/cms-strapi)
+- [Webiny](/examples/cms-webiny)
 - [Agility CMS](/examples/cms-agilitycms)
 - [Cosmic](/examples/cms-cosmic)
 - [ButterCMS](/examples/cms-buttercms)
@@ -44,21 +34,20 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```
-npx create-next-app --example blog-starter blog-starter-app
-
-```
-
-or
-
-```
-yarn create next-app --example blog-starter blog-starter-app
-
+```bash
+npx create-next-app --example cms-webiny cms-webiny-app
+# or
+yarn create next-app --example cms-webiny cms-webiny-app
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+## Configuration
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Step 1. Set up a Webiny project
+
+Follow the [Webiny docs](https://www.webiny.com/docs/tutorials/install-webiny) to install a Webiny project on your cloud hosting provider.
+
+If you get stuck or have any questions, please [join the community](http://webiny-community.slack.com "Webiny slack channel") and reach out for some help.
+
 
 # Notes
 
