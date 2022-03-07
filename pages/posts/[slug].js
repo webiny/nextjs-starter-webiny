@@ -16,6 +16,7 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  console.log(post)
   return (
     <Layout preview={preview}>
       <Container>
@@ -34,10 +35,10 @@ export default function Post({ post, morePosts, preview }) {
               <PostHeader
                 title={post.title}
                 coverImage={post.featuredImage}
-                date={post.date}
+                date={post.createdOn}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post.body} />
             </article>
           </>
         )}
