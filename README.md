@@ -1,4 +1,4 @@
-# A statically generated blog example using Next.js and Markdown
+# A statically generated blog example using Next.js and Webiny
 
 This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Webiny](https://webiny.com/) as the data source.
 ## Demo
@@ -20,7 +20,6 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 - [Prismic](/examples/cms-prismic)
 - [Contentful](/examples/cms-contentful)
 - [Strapi](/examples/cms-strapi)
-- [Webiny](/examples/cms-webiny)
 - [Agility CMS](/examples/cms-agilitycms)
 - [Cosmic](/examples/cms-cosmic)
 - [ButterCMS](/examples/cms-buttercms)
@@ -39,10 +38,7 @@ npx create-next-app --example cms-webiny cms-webiny-app
 # or
 yarn create next-app --example cms-webiny cms-webiny-app
 ```
-
-## Configuration
-
-### Step 1. Set up a Webiny project
+### Set up a Webiny project
 
 Follow the [Webiny docs](https://www.webiny.com/docs/tutorials/install-webiny) to install a Webiny project on your cloud hosting provider.
 
