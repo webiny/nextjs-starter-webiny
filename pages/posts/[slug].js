@@ -4,12 +4,13 @@ import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
+import MoreStories from "../../components/more-stories"
+import SectionSeparator from "../../components/section-separator"
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPostsWithSlug } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -39,6 +40,8 @@ export default function Post({ post, morePosts, preview }) {
               />
               <PostBody content={post.body} />
             </article>
+            <SectionSeparator />
+            {morePosts.data.length > 0 && <MoreStories posts={morePosts.data} />}
           </>
         )}
       </Container>
@@ -47,30 +50,29 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getPostBySlug(params.slug)
-  const content = await markdownToHtml(post.body || '')
+  const data = await getPostBySlug(params.slug)
 
   return {
     props: {
       post: {
-        ...post,
-        content,
+        ...data.post.data,
       },
+      morePosts: data?.morePosts
     },
   }
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllPostsWithSlug()
+  const allPosts = await getAllPostsWithSlug()
 
   return {
-    paths: posts.map((post) => {
+    paths: allPosts.map((post) => {
       return {
         params: {
-          slug: post.slug,
+          slug: `/posts/${post.slug}`,
         },
       }
     }),
-    fallback: false,
+    fallback: true,
   }
 }
