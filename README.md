@@ -3,7 +3,7 @@
 This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Webiny](https://webiny.com/) as the data source.
 ## Demo
 
-[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
+[https://next-blog-webiny.vercel.app/](https://next-blog-webiny.vercel.app/)
 
 ## Deploy your own
 
