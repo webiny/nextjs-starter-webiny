@@ -17,6 +17,7 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  console.log('render:', preview)
   return (
     <Layout preview={preview}>
       <Container>
@@ -49,11 +50,14 @@ export default function Post({ post, morePosts, preview }) {
   )
 }
 
-export async function getStaticProps({ params, preview }) {
-  const data = await getPostBySlug(params.slug, {}, preview)
+export async function getStaticProps(context) {
+  const { params, preview } = context
+  console.log('page:', preview)
+  const data = await getPostBySlug(params.slug, preview)
 
   return {
     props: {
+      preview,
       post: {
         ...data.post.data,
       },

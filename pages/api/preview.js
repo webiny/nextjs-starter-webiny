@@ -11,7 +11,7 @@ export default async function preview(req, res) {
   }
 
   // Fetch the headless CMS to check if the provided `slug` exists
-  const post = await getPostBySlug(req.query.slug, true)
+  const { post } = await getPostBySlug(req.query.slug, true)
 
   // If the slug doesn't exist prevent preview mode from being enabled
   if (!post) {
@@ -23,6 +23,6 @@ export default async function preview(req, res) {
 
   // Redirect to the path from the fetched post
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-  res.writeHead(307, { Location: `/posts/${post.slug}` })
+  res.writeHead(307, { Location: `/posts/${post.data.slug}` })
   res.end()
 }
