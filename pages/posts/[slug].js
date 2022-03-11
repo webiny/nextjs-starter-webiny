@@ -59,7 +59,7 @@ export async function getStaticProps(context) {
       post: {
         ...data.post.data,
       },
-      morePosts: data?.morePosts
+      morePosts: data.morePosts
     },
   }
 }
