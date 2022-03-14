@@ -50,12 +50,12 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps(context) {
-  const { params, preview } = context
-  const data = await getPostBySlug(params.slug, preview)
+  
+  const data = await getPostBySlug(context.params.slug, context.preview)
 
   return {
     props: {
-      preview,
+      preview: context.preview ?? null,
       post: {
         ...data.post.data,
       },
