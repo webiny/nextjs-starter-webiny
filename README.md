@@ -31,13 +31,12 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) to bootstrap the example:
 
 ```bash
-npx create-next-app --example cms-webiny cms-webiny-app
-# or
-yarn create next-app --example cms-webiny cms-webiny-app
+npx create-next-app nextjs-blog-webiny --example "https://github.com/webiny/nextjs-starter-webiny/tree/master"
 ```
+
 ### Step 1. Set up a Webiny project
 
 Follow the [Webiny docs](https://www.webiny.com/docs/tutorials/install-webiny) to install a Webiny project on your cloud hosting provider. Because Webiny is a distributed system we don't run it locally. This also means you don't need to worry about setting up Docker, or installing databases and drivers on your local machine for Postgres, MongoDB or similar. The cloud takes care of that for you.
